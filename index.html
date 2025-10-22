@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Trợ lý chống nắng L’Oréal Paris · UV Defender – Vạch đỏ</title>
+  <meta name="description" content="Chat với Trợ lý UV Defender của L’Oréal Paris: chọn loại phù hợp, cách dùng, giá & nơi mua chính hãng.">
+
+  <style>
+    :root {
+      --red: #e81c2e;
+      --red-dark: #c71427;
+      --gold: #f8d86b;
+    }
+
+    body {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      margin: 0;
+      color: #222;
+      background: linear-gradient(180deg, #fff9f9 0%, #ffe3e3 100%);
+      text-align: center;
+    }
+
+    /* Banner */
+    .banner {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background-image: url('Banner-Sale.jpeg'); /* ← đổi tên nếu ảnh khác */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    h1 {
+      font-size: 28px;
+      margin: 24px 0 10px;
+      color: #111;
+    }
+
+    p {
+      max-width: 720px;
+      margin: 10px auto;
+      line-height: 1.6;
+      font-size: 17px;
+      color: #333;
+    }
+
+    /* CTA button */
+    .cta {
+      margin: 25px 0;
+    }
+
+    .cta button {
+      background: var(--red);
+      color: white;
+      border: none;
+      padding: 14px 30px;
+      border-radius: 10px;
+      font-weight: bold;
+      font-size: 17px;
+      cursor: pointer;
+      box-shadow: 0 6px 18px rgba(232, 28, 46, 0.25);
+      transition: all 0.3s ease;
+    }
+
+    .cta button:hover {
+      background: var(--red-dark);
+      transform: scale(1.05);
+    }
+
+    /* Tips */
+    .tips {
+      background: var(--red);
+      color: white;
+      max-width: 720px;
+      margin: 20px auto;
+      padding: 20px;
+      border-radius: 14px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+      text-align: left;
+    }
+
+    .tips p {
+      margin: 10px 0;
+      color: #fff;
+    }
+
+    .tips strong {
+      color: var(--gold);
+    }
+
+    footer {
+      color: #555;
+      padding: 20px;
+      font-size: 14px;
+    }
+
+    .coze-chat-launcher {
+      background: var(--red) !important;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Banner -->
+  <div class="banner"></div>
+
+  <!-- Nội dung -->
+  <main>
+    <h1>Trợ lý chống nắng L’Oréal Paris · UV Defender – Vạch đỏ</h1>
+    <p>Đặt câu hỏi về loại da phù hợp, cách sử dụng đúng, giá bán & nơi mua chính hãng. Nhấn “Mở khung chat” để bắt đầu trò chuyện.</p>
+
+    <div class="cta">
+      <button id="openChat">💬 Mở khung chat</button>
+    </div>
+
+    <div class="tips">
+      <p>🌷 <strong>Công nghệ bảo vệ da hiện đại:</strong> Chống tia UVA/UVB, phù hợp với khí hậu Việt Nam.</p>
+      <p>💧 <strong>Dạng serum nhẹ:</strong> Không nhờn rít, thấm nhanh, cho làn da sáng mịn tự nhiên.</p>
+<p>🌞 <strong>Thích hợp sử dụng mỗi ngày:</strong> Đi học, đi làm hay ra nắng đều tự tin tỏa sáng!</p>
+    </div>
+  </main>
+
+  <footer>© 2025 L’Oréal Paris – UV Defender | Demo chatbot AI được tạo bằng Coze</footer>
+
+  <!-- Coze SDK -->
+  <script src="https://sf-cdn.coze.com/obj/unpkg-va/flow-platform/chat-app-sdk/1.2.0-beta.6/libs/oversea/index.js"></script>
+  <script>
+    const BOT_ID = "7563998127880290322";
+    const PAT_TOKEN = "pat_xKAwhuxy9bsQOXk8Tknw77AYgtt8OmeMQX71AWpd3qdpUQjNI2tpi9m8UUuBtQZc";
+
+    const client = new CozeWebSDK.WebChatClient({
+      config: { bot_id: BOT_ID },
+      componentProps: {
+        title: "Trợ lý UV Defender 💬",
+        width: 380,
+        height: 560,
+      },
+      auth: {
+        type: "token",
+        token: PAT_TOKEN,
+        onRefreshToken: () => PAT_TOKEN
+      }
+    });
+
+    document.getElementById("openChat").addEventListener("click", () => client.show());
+  </script>
+</body>
+</html>
